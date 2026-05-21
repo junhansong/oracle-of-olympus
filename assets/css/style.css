@@ -586,6 +586,9 @@ canvas {
   width: min(300px, 82vw);
   height: min(440px, calc(82vw * 1.47));
   margin-bottom: 32px;
+  /* 하단 버튼 그룹과의 z-index 격리 — 버튼 클릭 방해 방지 */
+  position: relative;
+  z-index: 0;
 }
 
 /* 카드 본체 — 3D 변환 */
