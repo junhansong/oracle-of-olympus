@@ -582,7 +582,8 @@ canvas {
   padding: 20px 20px 8px;
   gap: 0;
   min-height: 0;
-  overflow: hidden;
+  /* visible: 뒷면 콘텐츠가 card-scene 높이를 초과해도 잘리지 않도록 */
+  overflow: visible;
 }
 
 /* 카드 3D 씬 — perspective 설정 */
@@ -590,15 +591,14 @@ canvas {
   perspective: 1200px;
   width: min(300px, 82vw);
   /* 뷰포트 높이 기반 최대 높이 — 헤더(70px)+버튼(130px)+여백 제외 */
-  /* 컨테이너(card-content) 높이에서 자연스럽게 결정 */
-  height: min(400px, calc(82vw * 1.47));
-  /* margin-bottom 제거: space-between이 간격을 자동 조절 */
+  /* 뒷면 콘텐츠(~320px)가 충분히 들어올 수 있도록 여유 높이 확보 */
+  height: min(440px, calc(82vw * 1.6), calc(100dvh - 230px));
   margin-bottom: 0;
-  /* z-index 격리 유지 */
   position: relative;
   z-index: 0;
-  /* 카드가 컨테이너를 벗어나지 않도록 */
   flex-shrink: 0;
+  /* 뒷면이 씬 높이를 초과할 경우 잘리지 않도록 */
+  overflow: visible;
 }
 
 /* 카드 본체 — 3D 변환 */
@@ -755,8 +755,9 @@ canvas {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 24px 20px;
+  /* 상단 정렬: 앞면과 동일한 시작 위치에서 콘텐츠 표시 */
+  justify-content: flex-start;
+  padding: 20px 20px;
   gap: 8px;
   position: relative;
 }
@@ -1023,9 +1024,9 @@ canvas {
     padding: 24px 20px 40px;
   }
 
-  /* 소형 모바일에서 카드 높이 적극 제한 */
+  /* 소형 모바일 — 뒷면 콘텐츠(~320px)가 들어올 수 있도록 충분한 높이 확보 */
   .card-scene {
-    height: min(300px, calc(82vw * 1.2), calc(100dvh - 220px));
+    height: min(380px, calc(82vw * 1.4), calc(100dvh - 230px));
   }
 }
 
