@@ -566,30 +566,39 @@ canvas {
    화면 3 — 운세 카드
    ===================================================== */
 #screen-card {
-  justify-content: flex-start;
+  /* flex column: 헤더 / 카드콘텐츠(flex:1) / 버튼 순으로 쌓임 */
+  flex-direction: column;
+  overflow: hidden;
 }
 
-/* 카드 콘텐츠 영역 */
+/* 카드 콘텐츠 영역 — 버튼을 제외한 나머지 공간 차지 */
 .card-content {
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* center 대신 flex-start — 카드가 버튼을 덮지 않도록 위에서부터 배치 */
-  justify-content: flex-start;
-  padding: 24px 20px 32px;
+  /* 카드를 수직 가운데 배치 */
+  justify-content: center;
+  padding: 16px 20px 8px;
   gap: 0;
+  min-height: 0;
+  overflow: hidden;
 }
 
 /* 카드 3D 씬 — perspective 설정 */
 .card-scene {
   perspective: 1200px;
   width: min(300px, 82vw);
-  height: min(440px, calc(82vw * 1.47));
-  margin-bottom: 32px;
-  /* 하단 버튼 그룹과의 z-index 격리 — 버튼 클릭 방해 방지 */
+  /* 뷰포트 높이 기반 최대 높이 — 헤더(70px)+버튼(130px)+여백 제외 */
+  /* 컨테이너(card-content) 높이에서 자연스럽게 결정 */
+  height: min(400px, calc(82vw * 1.47));
+  /* margin-bottom 제거: space-between이 간격을 자동 조절 */
+  margin-bottom: 0;
+  /* z-index 격리 유지 */
   position: relative;
   z-index: 0;
+  /* 카드가 컨테이너를 벗어나지 않도록 */
+  flex-shrink: 0;
 }
 
 /* 카드 본체 — 3D 변환 */
@@ -845,7 +854,9 @@ canvas {
   flex-wrap: wrap;
   gap: 10px;
   justify-content: center;
-  margin-top: 24px;
+  /* card-content 밖에 배치 — screen-card의 flex 마지막 자식 */
+  flex-shrink: 0;
+  padding: 12px 20px 20px;
 }
 
 /* 피드백 버튼 공통 */
@@ -945,17 +956,48 @@ canvas {
   }
 
   .btn-group-card {
-    flex-direction: column;
+    /* 모바일에서도 가로 배치 유지 — 세로로 쌓으면 화면 공간 초과 */
+    flex-direction: row;
+    flex-wrap: wrap;
     width: 100%;
-    max-width: 280px;
+    max-width: 340px;
+    gap: 8px;
   }
 
   .btn-group-card button {
-    width: 100%;
+    /* 2열 배치: 각 버튼이 절반 차지 */
+    flex: 1 1 calc(50% - 8px);
+    min-width: 120px;
+    font-size: 0.8rem;
+    padding: 9px 10px;
   }
 
   .intro-content {
     padding: 24px 20px 40px;
+  }
+
+  /* 소형 모바일에서 카드 높이 적극 제한 */
+  .card-scene {
+    height: min(300px, calc(82vw * 1.2), calc(100dvh - 220px));
+  }
+}
+
+/* 매우 작은 화면 (667px 높이 iPhone SE 등) */
+@media (max-height: 680px) {
+  .card-scene {
+    /* 버튼(4개 2열) + 여백을 제외하고 최대한 할당 */
+    height: calc(100dvh - 210px);
+  }
+
+  /* 카드 내부 여백 최소화 */
+  .card-back {
+    padding: 8px !important;
+  }
+
+  /* 버튼 더 작게 */
+  .btn-group-card button {
+    font-size: 0.75rem;
+    padding: 8px 8px;
   }
 }
 
