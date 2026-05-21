@@ -121,6 +121,11 @@ function applyTheme(theme, animate = true) {
 
   // localStorage 저장
   Storage.set('oracle-theme', theme);
+
+  // 카드 화면이 표시 중이면 현재 신의 배경을 새 테마로 즉시 갱신
+  if (AppState.selectedGod) {
+    applyCardTheme(AppState.selectedGod);
+  }
 }
 
 /** 테마 토글 핸들러 */
