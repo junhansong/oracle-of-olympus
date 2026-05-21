@@ -1,0 +1,69 @@
+<!-- 포세이돈 — 플랫 아이콘 스타일 -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <!-- 배경 원 -->
+  <circle cx="60" cy="60" r="55" fill="#4488cc"/>
+  <!-- 배경 어두운 원 -->
+  <circle cx="60" cy="60" r="50" fill="#001530"/>
+
+  <!-- 머리카락 (넓고 강인한) -->
+  <path d="M36,54 Q28,70 32,88 Q42,102 60,104 Q78,102 88,88 Q92,70 84,54"
+    fill="#1a5599"/>
+
+  <!-- 삼지창 왕관 (3개 뾰족, 삼지창 형태) -->
+  <!-- 왕관 본체 띠 -->
+  <rect x="36" y="50" width="48" height="6" rx="3" fill="#2266aa"/>
+  <!-- 중앙 뾰족 (가장 높음) -->
+  <polygon points="60,50 56,34 60,28 64,34" fill="#4488cc"/>
+  <!-- 좌측 뾰족 -->
+  <polygon points="48,50 45,38 48,33 51,38" fill="#4488cc"/>
+  <!-- 우측 뾰족 -->
+  <polygon points="72,50 69,38 72,33 75,38" fill="#4488cc"/>
+  <!-- 뾰족 끝 하이라이트 -->
+  <circle cx="60" cy="29" r="2" fill="#88bbee"/>
+  <circle cx="48" cy="34" r="1.5" fill="#88bbee"/>
+  <circle cx="72" cy="34" r="1.5" fill="#88bbee"/>
+
+  <!-- 얼굴 타원 -->
+  <ellipse cx="60" cy="66" rx="19" ry="20" fill="#99bbdd"/>
+
+  <!-- 귀 -->
+  <ellipse cx="41" cy="67" rx="5" ry="6" fill="#7799bb"/>
+  <ellipse cx="79" cy="67" rx="5" ry="6" fill="#7799bb"/>
+
+  <!-- 눈썹 (굵고 강인한) -->
+  <path d="M48,59 Q54,54 60,57" fill="none" stroke="#001a44" stroke-width="3" stroke-linecap="round"/>
+  <path d="M72,59 Q66,54 60,57" fill="none" stroke="#001a44" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- 눈 (강렬) -->
+  <ellipse cx="53" cy="63" rx="4" ry="3.5" fill="white"/>
+  <ellipse cx="67" cy="63" rx="4" ry="3.5" fill="white"/>
+  <ellipse cx="53" cy="64" rx="2.8" ry="2.5" fill="#001a44"/>
+  <ellipse cx="67" cy="64" rx="2.8" ry="2.5" fill="#001a44"/>
+  <circle cx="54.5" cy="62.5" r="1" fill="white"/>
+  <circle cx="68.5" cy="62.5" r="1" fill="white"/>
+
+  <!-- 코 -->
+  <path d="M60,67 Q57,72 59,74 Q61,74 63,72 Q60,70 60,67Z" fill="#77aacc" stroke="none"/>
+
+  <!-- 수염 (파도처럼 물결치는) -->
+  <path d="M42,72 Q46,68 50,72 Q54,76 58,72 Q62,68 66,72 Q70,76 74,72 Q78,68 78,72 Q76,84 60,88 Q44,84 42,72Z"
+    fill="#2266aa"/>
+  <!-- 수염 물결 디테일 -->
+  <path d="M44,74 Q48,71 52,74 Q56,77 60,74 Q64,71 68,74 Q72,77 76,74"
+    fill="none" stroke="#4488cc" stroke-width="1.2" stroke-linecap="round"/>
+  <path d="M46,80 Q52,77 58,80 Q64,77 70,80 Q68,86 60,88 Q52,86 46,80Z"
+    fill="#1a5599"/>
+
+  <!-- 입 -->
+  <path d="M52,73 Q60,69 68,73" fill="none" stroke="#001a44" stroke-width="1.5" stroke-linecap="round"/>
+
+  <!-- 삼지창 심볼 (하단 우측) -->
+  <!-- 삼지창 막대 -->
+  <line x1="79" y1="80" x2="79" y2="107" stroke="#4488cc" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- 삼지창 3갈래 -->
+  <line x1="79" y1="80" x2="79" y2="86" stroke="#4488cc" stroke-width="2.5"/>
+  <line x1="73" y1="80" x2="73" y2="88" stroke="#4488cc" stroke-width="2" stroke-linecap="round"/>
+  <line x1="85" y1="80" x2="85" y2="88" stroke="#4488cc" stroke-width="2" stroke-linecap="round"/>
+  <!-- 삼지창 연결부 -->
+  <rect x="72" y="87" width="14" height="2" rx="1" fill="#4488cc"/>
+</svg>

@@ -1,0 +1,74 @@
+<!-- 헤라 — 플랫 아이콘 스타일 -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <!-- 배경 원 -->
+  <circle cx="60" cy="60" r="55" fill="#cc88cc"/>
+  <!-- 배경 어두운 원 -->
+  <circle cx="60" cy="60" r="50" fill="#1a0010"/>
+
+  <!-- 머리카락 (여왕풍 넓은 실루엣) -->
+  <path d="M38,55 Q30,70 34,88 Q44,100 60,102 Q76,100 86,88 Q90,70 82,55"
+    fill="#882299"/>
+
+  <!-- 여왕 왕관 (뾰족 5각) -->
+  <path d="M36,52 L40,36 L48,46 L60,28 L72,46 L80,36 L84,52 Z"
+    fill="#cc88cc"/>
+  <!-- 왕관 보석들 -->
+  <circle cx="60" cy="31" r="3" fill="#ffccff"/>
+  <circle cx="44" cy="40" r="2" fill="#ffccff"/>
+  <circle cx="76" cy="40" r="2" fill="#ffccff"/>
+  <!-- 왕관 띠 -->
+  <rect x="36" y="50" width="48" height="5" rx="2" fill="#aa66bb"/>
+
+  <!-- 공작새 깃털 (왕관 왼쪽, 3개) -->
+  <ellipse cx="30" cy="36" rx="4" ry="10" fill="#8844aa" transform="rotate(-20,30,36)"/>
+  <ellipse cx="30" cy="36" rx="2" ry="5" fill="#cc66dd" transform="rotate(-20,30,36)"/>
+  <circle cx="28" cy="27" r="3" fill="#4422aa"/>
+  <circle cx="28" cy="27" r="1.5" fill="#88aaff"/>
+
+  <ellipse cx="24" cy="40" rx="4" ry="10" fill="#8844aa" transform="rotate(-35,24,40)"/>
+  <ellipse cx="24" cy="40" rx="2" ry="5" fill="#cc66dd" transform="rotate(-35,24,40)"/>
+  <circle cx="19" cy="32" r="3" fill="#4422aa"/>
+  <circle cx="19" cy="32" r="1.5" fill="#88aaff"/>
+
+  <ellipse cx="22" cy="50" rx="4" ry="10" fill="#8844aa" transform="rotate(-50,22,50)"/>
+  <ellipse cx="22" cy="50" rx="2" ry="5" fill="#cc66dd" transform="rotate(-50,22,50)"/>
+  <circle cx="13" cy="44" r="3" fill="#4422aa"/>
+  <circle cx="13" cy="44" r="1.5" fill="#88aaff"/>
+
+  <!-- 얼굴 타원 -->
+  <ellipse cx="60" cy="66" rx="19" ry="21" fill="#e8c8e8"/>
+
+  <!-- 귀 -->
+  <ellipse cx="41" cy="67" rx="5" ry="6" fill="#d8b0d8"/>
+  <ellipse cx="79" cy="67" rx="5" ry="6" fill="#d8b0d8"/>
+
+  <!-- 눈썹 (위엄있고 아치형) -->
+  <path d="M49,59 Q55,54 61,57" fill="none" stroke="#5a1a5a" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M71,59 Q65,54 59,57" fill="none" stroke="#5a1a5a" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- 눈 (위엄있는) -->
+  <ellipse cx="53" cy="63" rx="4.5" ry="3.5" fill="white"/>
+  <ellipse cx="67" cy="63" rx="4.5" ry="3.5" fill="white"/>
+  <ellipse cx="53" cy="64" rx="3" ry="2.8" fill="#660066"/>
+  <ellipse cx="67" cy="64" rx="3" ry="2.8" fill="#660066"/>
+  <circle cx="54.5" cy="62.5" r="1" fill="white"/>
+  <circle cx="68.5" cy="62.5" r="1" fill="white"/>
+
+  <!-- 코 -->
+  <path d="M60,67 Q57,72 59,74 Q61,74 63,72 Q60,70 60,67Z" fill="#c8a8c8" stroke="none"/>
+
+  <!-- 입 (조용하고 위엄있는) -->
+  <path d="M53,78 Q60,82 67,78" fill="none" stroke="#882288" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- 귀걸이 (눈물방울 보석) -->
+  <ellipse cx="38" cy="74" rx="2.5" ry="4" fill="#cc88cc"/>
+  <ellipse cx="82" cy="74" rx="2.5" ry="4" fill="#cc88cc"/>
+
+  <!-- 하단 우측: 공작 심볼 (석류 형태) -->
+  <circle cx="80" cy="90" r="8" fill="#cc88cc"/>
+  <circle cx="80" cy="90" r="5" fill="#1a0010"/>
+  <path d="M80,84 Q76,88 78,92 Q80,94 82,92 Q84,88 80,84Z" fill="#cc88cc"/>
+  <circle cx="77" cy="90" r="1.5" fill="#cc88cc"/>
+  <circle cx="83" cy="90" r="1.5" fill="#cc88cc"/>
+  <circle cx="80" cy="87" r="1.5" fill="#cc88cc"/>
+</svg>

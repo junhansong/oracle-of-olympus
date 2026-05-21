@@ -1,0 +1,82 @@
+<!-- 데메테르 — 플랫 아이콘 스타일 -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <!-- 배경 원 -->
+  <circle cx="60" cy="60" r="55" fill="#66aa44"/>
+  <!-- 배경 어두운 원 -->
+  <circle cx="60" cy="60" r="50" fill="#0a1a08"/>
+
+  <!-- 머리카락 (따뜻하고 풍성한) -->
+  <path d="M38,56 Q30,72 34,88 Q44,100 60,102 Q76,100 86,88 Q90,72 82,56"
+    fill="#886622"/>
+
+  <!-- 밀 이삭 화관 (반원형 배치) -->
+  <!-- 화관 띠 -->
+  <path d="M34,54 Q60,46 86,54" fill="none" stroke="#aa8833" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- 밀 이삭들 (왼쪽에서 오른쪽으로) -->
+  <!-- 밀 이삭 1 (좌측) -->
+  <ellipse cx="38" cy="44" rx="3.5" ry="7" fill="#ccaa44" transform="rotate(-20,38,44)"/>
+  <line x1="38" y1="51" x2="38" y2="56" stroke="#aa8833" stroke-width="1.5"/>
+  <path d="M35,46 Q33,44 35,42" fill="none" stroke="#ccaa44" stroke-width="1.2"/>
+  <path d="M41,44 Q43,42 41,40" fill="none" stroke="#ccaa44" stroke-width="1.2"/>
+
+  <!-- 밀 이삭 2 -->
+  <ellipse cx="47" cy="38" rx="3.5" ry="7" fill="#ddbb55" transform="rotate(-10,47,38)"/>
+  <line x1="47" y1="45" x2="47" y2="54" stroke="#aa8833" stroke-width="1.5"/>
+  <path d="M44,40 Q42,38 44,36" fill="none" stroke="#ccaa44" stroke-width="1.2"/>
+  <path d="M50,38 Q52,36 50,34" fill="none" stroke="#ccaa44" stroke-width="1.2"/>
+
+  <!-- 밀 이삭 3 (중앙) -->
+  <ellipse cx="60" cy="34" rx="4" ry="8" fill="#ccaa44"/>
+  <line x1="60" y1="42" x2="60" y2="54" stroke="#aa8833" stroke-width="1.5"/>
+  <path d="M56,37 Q54,35 56,33" fill="none" stroke="#ccaa44" stroke-width="1.2"/>
+  <path d="M64,37 Q66,35 64,33" fill="none" stroke="#ccaa44" stroke-width="1.2"/>
+  <path d="M57,41 Q55,39 57,37" fill="none" stroke="#ccaa44" stroke-width="1.2"/>
+  <path d="M63,41 Q65,39 63,37" fill="none" stroke="#ccaa44" stroke-width="1.2"/>
+
+  <!-- 밀 이삭 4 -->
+  <ellipse cx="73" cy="38" rx="3.5" ry="7" fill="#ddbb55" transform="rotate(10,73,38)"/>
+  <line x1="73" y1="45" x2="73" y2="54" stroke="#aa8833" stroke-width="1.5"/>
+  <path d="M70,40 Q68,38 70,36" fill="none" stroke="#ccaa44" stroke-width="1.2"/>
+  <path d="M76,38 Q78,36 76,34" fill="none" stroke="#ccaa44" stroke-width="1.2"/>
+
+  <!-- 밀 이삭 5 (우측) -->
+  <ellipse cx="82" cy="44" rx="3.5" ry="7" fill="#ccaa44" transform="rotate(20,82,44)"/>
+  <line x1="82" y1="51" x2="82" y2="56" stroke="#aa8833" stroke-width="1.5"/>
+  <path d="M79,46 Q77,44 79,42" fill="none" stroke="#ccaa44" stroke-width="1.2"/>
+  <path d="M85,44 Q87,42 85,40" fill="none" stroke="#ccaa44" stroke-width="1.2"/>
+
+  <!-- 얼굴 타원 -->
+  <ellipse cx="60" cy="67" rx="19" ry="21" fill="#c8e0a0"/>
+
+  <!-- 귀 -->
+  <ellipse cx="41" cy="68" rx="5" ry="6" fill="#b0cc88"/>
+  <ellipse cx="79" cy="68" rx="5" ry="6" fill="#b0cc88"/>
+
+  <!-- 눈썹 (따뜻하고 부드러운) -->
+  <path d="M49,60 Q55,56 61,58" fill="none" stroke="#336611" stroke-width="2" stroke-linecap="round"/>
+  <path d="M71,60 Q65,56 59,58" fill="none" stroke="#336611" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- 눈 (따뜻하고 자애로운) -->
+  <ellipse cx="53" cy="64" rx="4.5" ry="3.5" fill="white"/>
+  <ellipse cx="67" cy="64" rx="4.5" ry="3.5" fill="white"/>
+  <ellipse cx="53" cy="65" rx="3" ry="2.8" fill="#336611"/>
+  <ellipse cx="67" cy="65" rx="3" ry="2.8" fill="#336611"/>
+  <circle cx="54.5" cy="63.5" r="1" fill="white"/>
+  <circle cx="68.5" cy="63.5" r="1" fill="white"/>
+
+  <!-- 코 -->
+  <path d="M60,68 Q57,73 59,75 Q61,75 63,73 Q60,71 60,68Z" fill="#a8cc80" stroke="none"/>
+
+  <!-- 입 (온화한 미소) -->
+  <path d="M52,78 Q60,84 68,78" fill="none" stroke="#446622" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- 볼 홍조 -->
+  <ellipse cx="44" cy="70" rx="5" ry="3.5" fill="#88cc44" opacity="0.4"/>
+  <ellipse cx="76" cy="70" rx="5" ry="3.5" fill="#88cc44" opacity="0.4"/>
+
+  <!-- 하단: 낫 심볼 (우측) -->
+  <path d="M76,84 Q82,80 86,86 Q86,96 78,98 Q74,98 74,95 Q74,92 78,92 Q82,92 82,88 Q80,84 76,84Z"
+    fill="#66aa44"/>
+  <line x1="74" y1="95" x2="70" y2="107" stroke="#66aa44" stroke-width="2.5" stroke-linecap="round"/>
+</svg>

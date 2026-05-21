@@ -1,0 +1,61 @@
+<!-- 아테나 — 플랫 아이콘 스타일 -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <!-- 배경 원 -->
+  <circle cx="60" cy="60" r="55" fill="#88aaaa"/>
+  <!-- 배경 어두운 원 -->
+  <circle cx="60" cy="60" r="50" fill="#081818"/>
+
+  <!-- 코린토스식 투구 본체 -->
+  <!-- 투구 뒷면 -->
+  <path d="M34,62 Q32,42 60,32 Q88,42 86,62 L86,72 Q86,80 78,82 L78,90 L42,90 L42,82 Q34,80 34,72 Z"
+    fill="#88aaaa"/>
+  <!-- 투구 어두운 안쪽 면 -->
+  <path d="M42,58 Q42,40 60,34 Q78,40 78,58 L78,72 Q78,78 70,80 L50,80 Q42,78 42,72 Z"
+    fill="#446666"/>
+
+  <!-- 투구 볏 (상단) -->
+  <ellipse cx="60" cy="32" rx="6" ry="4" fill="#cc4444"/>
+  <path d="M54,32 Q44,24 40,14 Q50,16 60,22 Q70,16 80,14 Q76,24 66,32 Z"
+    fill="#cc4444"/>
+  <!-- 볏 하이라이트 -->
+  <path d="M52,32 Q50,28 46,20 Q50,21 56,26" fill="#ee6666" opacity="0.6"/>
+
+  <!-- 바이저 (얼굴 가리개) 개구부 — 코린토스 특유의 T자 또는 역T -->
+  <!-- 바이저 슬롯 (눈 부분 어두운 사각) -->
+  <path d="M44,56 Q44,48 60,46 Q76,48 76,56 L76,60 Q76,64 60,64 Q44,64 44,60 Z"
+    fill="#0d2222"/>
+  <!-- 바이저 노즈가드 -->
+  <rect x="57" y="54" width="6" height="14" rx="3" fill="#88aaaa"/>
+
+  <!-- 투구 뺨 가리개 -->
+  <path d="M42,62 L42,80 Q42,84 48,84 L48,62 Z" fill="#6a8888"/>
+  <path d="M78,62 L78,80 Q78,84 72,84 L72,62 Z" fill="#6a8888"/>
+
+  <!-- 얼굴 (투구 바이저 개구부 안에) -->
+  <ellipse cx="60" cy="58" rx="13" ry="9" fill="#aacccc"/>
+
+  <!-- 부엉이 눈 장식 (바이저에) -->
+  <circle cx="52" cy="57" r="3.5" fill="#001a1a"/>
+  <circle cx="68" cy="57" r="3.5" fill="#001a1a"/>
+  <circle cx="52" cy="57" r="2" fill="#88aaaa"/>
+  <circle cx="68" cy="57" r="2" fill="#88aaaa"/>
+  <circle cx="52.8" cy="56.3" r="0.8" fill="white"/>
+  <circle cx="68.8" cy="56.3" r="0.8" fill="white"/>
+
+  <!-- 코 (바이저 노즈가드 위에 살짝) -->
+  <path d="M60,60 Q58,63 59,64 Q61,64 62,63 Q60,62 60,60Z" fill="#88aaaa" stroke="none"/>
+
+  <!-- 귀 (투구 뺨 가리개 아래) -->
+  <ellipse cx="42" cy="76" rx="4" ry="5" fill="#6a8888"/>
+  <ellipse cx="78" cy="76" rx="4" ry="5" fill="#6a8888"/>
+
+  <!-- 하단: 올리브 가지 심볼 (우측) -->
+  <line x1="76" y1="92" x2="88" y2="108" stroke="#88aaaa" stroke-width="2" stroke-linecap="round"/>
+  <!-- 올리브 잎들 -->
+  <ellipse cx="79" cy="97" rx="4" ry="2.5" fill="#88aaaa" transform="rotate(-40,79,97)"/>
+  <ellipse cx="83" cy="102" rx="4" ry="2.5" fill="#88aaaa" transform="rotate(-40,83,102)"/>
+  <ellipse cx="76" cy="101" rx="3.5" ry="2" fill="#668888" transform="rotate(30,76,101)"/>
+  <!-- 올리브 열매 -->
+  <circle cx="81" cy="99" r="2" fill="#aaccaa"/>
+  <circle cx="86" cy="105" r="2" fill="#aaccaa"/>
+</svg>

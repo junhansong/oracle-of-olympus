@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="올림포스 12신 중 하나를 선택하여 오늘의 신탁을 받아보세요. Oracle of Olympus 포춘카드 웹앱.">
+  <meta name="theme-color" content="#06000f">
+  <title>올림푸스의 신탁 — 오늘의 운세</title>
+
+  <!-- FOUC(Flash of Unstyled Content) 방지: CSS 로드 전에 저장된 테마를 즉시 적용합니다 -->
+  <script>
+    (function () {
+      var saved = localStorage.getItem('theme');
+      var sys = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', saved || sys);
+    })();
+  </script>
+
+  <!-- Google Fonts: Noto Serif KR (본문), Noto Sans KR (보조), Cinzel (라틴 장식체) -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@400;500&family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- 앱 전체 스타일시트 -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Canvas 별빛 배경 — 모든 화면 공통, position:fixed -->
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+  <!-- 피드백 토스트 알림 — 만족/불만족 버튼 클릭 시 표시 -->
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <!-- ================================================
+       신 소개 모달 — 소개 버튼 클릭 시 표시
+       ================================================ -->
+  <div
+    id="modal-overlay"
+    class="modal-overlay hidden"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modal-god-name"
+  >
+    <div class="modal-box">
+      <!-- 신 이모지 -->
+      <div id="modal-god-emoji" class="modal-emoji" aria-hidden="true"></div>
+      <!-- 신 이름 (aria-labelledby 대상) -->
+      <h2 id="modal-god-name" class="modal-name"></h2>
+      <!-- 도메인 -->
+      <p id="modal-god-domain" class="modal-domain"></p>
+      <!-- 소개 문구 -->
+      <p id="modal-god-intro" class="modal-intro"></p>
+      <!-- 닫기 버튼 -->
+      <button id="btn-modal-close" class="btn-primary" aria-label="소개 닫기">닫기</button>
+    </div>
+  </div>
+
+  <!-- ================================================
+       화면 1: 인트로
+       ================================================ -->
+  <section id="screen-intro" class="screen" aria-label="인트로 화면">
+
+    <!-- 공통 헤더 -->
+    <header class="app-header">
+      <span class="header-title">ORACLE OF OLYMPUS</span>
+      <button
+        id="btn-theme-intro"
+        class="btn-theme"
+        aria-label="라이트 모드로 전환"
+        aria-pressed="false"
+        title="테마 전환"
+      >🌙</button>
+    </header>
+
+    <!-- 인트로 본문 콘텐츠 -->
+    <div class="intro-content">
+      <!-- 메인 로고 이모지 -->
+      <div class="intro-logo" aria-hidden="true">⚡</div>
+      <!-- 영문 라벨 -->
+      <p class="oracle-label">ORACLE OF OLYMPUS</p>
+      <!-- 메인 타이틀 -->
+      <h1 class="intro-title">올림푸스의 신탁</h1>
+      <!-- 서브타이틀 -->
+      <p class="intro-subtitle">오늘의 운세</p>
+      <!-- 앱 사용 안내 문구 -->
+      <p class="intro-desc">
+        12명의 올림포스 신 중 하나를 선택하여<br>
+        오늘의 신탁을 받아보세요.
+      </p>
+      <!-- 시작 버튼 -->
+      <button id="btn-start" class="btn-primary" aria-label="시작하기">시작하기 →</button>
+    </div>
+
+  </section>
+
+  <!-- ================================================
+       화면 2: 신 선택 목록
+       ================================================ -->
+  <section id="screen-list" class="screen hidden" aria-label="신 선택 목록">
+
+    <!-- 공통 헤더 -->
+    <header class="app-header">
+      <span class="header-title">ORACLE OF OLYMPUS</span>
+      <button
+        id="btn-theme-list"
+        class="btn-theme"
+        aria-label="라이트 모드로 전환"
+        aria-pressed="false"
+        title="테마 전환"
+      >🌙</button>
+    </header>
+
+    <!-- 목록 콘텐츠 -->
+    <div class="list-content">
+      <p class="list-subtitle">신을 선택하여 오늘의 신탁을 받으세요</p>
+      <!-- 신 그리드 — JS renderGodList()로 동적 채워짐 -->
+      <div id="gods-grid" class="gods-grid" role="list" aria-label="올림포스 12신 목록"></div>
+    </div>
+
+  </section>
+
+  <!-- ================================================
+       화면 3: 운세 카드
+       ================================================ -->
+  <section id="screen-card" class="screen hidden" aria-label="오늘의 운세 카드">
+
+    <!-- 공통 헤더 -->
+    <header class="app-header">
+      <span class="header-title">ORACLE OF OLYMPUS</span>
+      <button
+        id="btn-theme-card"
+        class="btn-theme"
+        aria-label="라이트 모드로 전환"
+        aria-pressed="false"
+        title="테마 전환"
+      >🌙</button>
+    </header>
+
+    <!-- 카드 콘텐츠 영역 -->
+    <div class="card-content">
+
+      <!-- 카드 3D 씬 — perspective 컨테이너 -->
+      <div class="card-scene" aria-label="운세 카드">
+        <!-- 카드 본체 — 클릭 시 수동 플립 가능 -->
+        <div class="card" id="oracle-card" role="button" aria-label="카드를 클릭하여 뒤집기" tabindex="0">
+
+          <!-- 카드 앞면 -->
+          <div class="card-face card-front" aria-hidden="true">
+            <!-- 내부 테두리 인셋 -->
+            <div class="front-inset"></div>
+            <!-- 별빛 파티클 컨테이너 -->
+            <div id="front-stars" class="front-stars"></div>
+            <!-- 상단 룬 문자 장식 -->
+            <p class="front-rune-top">Ω &nbsp; Ξ &nbsp; Ψ &nbsp; Λ</p>
+            <!-- 기둥 3개 -->
+            <div class="columns-row">
+              <div class="col">
+                <div class="col-cap"></div>
+                <div class="col-shaft"></div>
+                <div class="col-base"></div>
+              </div>
+              <div class="col">
+                <div class="col-cap"></div>
+                <div class="col-shaft"></div>
+                <div class="col-base"></div>
+              </div>
+              <div class="col">
+                <div class="col-cap"></div>
+                <div class="col-shaft"></div>
+                <div class="col-base"></div>
+              </div>
+            </div>
+            <!-- ? 기호 -->
+            <div class="front-question">?</div>
+            <!-- 하단 룬 문자 장식 -->
+            <p class="front-rune-bottom">Θ &nbsp; Φ &nbsp; Δ &nbsp; Σ</p>
+          </div>
+
+          <!-- 카드 뒷면 — JS showOracleCard()로 내용 채워짐 -->
+          <div class="card-face card-back" id="card-back">
+            <!-- 내부 테두리 인셋 -->
+            <div class="back-inset"></div>
+            <!-- 신 이모지 (float 애니메이션) -->
+            <div id="card-god-emoji" class="god-emoji" aria-hidden="true"></div>
+            <!-- 신 한글 이름 -->
+            <div id="card-god-kr" class="god-kr"></div>
+            <!-- 신 영문 이름 -->
+            <div id="card-god-en" class="god-en"></div>
+            <!-- 도메인 태그 -->
+            <div id="card-god-domain" class="domain-pill"></div>
+            <!-- 구분선 -->
+            <div class="divider-line"></div>
+            <!-- 운세 문구 — 플립 후 페이드인 -->
+            <p id="card-fortune-msg" class="fortune-msg" aria-live="polite"></p>
+          </div>
+
+        </div><!-- /#oracle-card -->
+      </div><!-- /.card-scene -->
+
+      <!-- 하단 버튼 그룹 -->
+      <div class="btn-group-card">
+        <!-- 돌아가기: 신 목록 화면으로 + 스크롤 위치 복원 -->
+        <button id="btn-back" class="btn-secondary" aria-label="신 목록으로 돌아가기">← 돌아가기</button>
+        <!-- 만족 피드백 -->
+        <button id="btn-like" class="btn-feedback btn-like" aria-label="만족">👍 만족</button>
+        <!-- 불만족 피드백 -->
+        <button id="btn-dislike" class="btn-feedback btn-dislike" aria-label="불만족">👎 불만족</button>
+        <!-- 종료: 인트로 화면으로 -->
+        <button id="btn-exit" class="btn-outline" aria-label="앱 종료 및 처음으로">종료</button>
+      </div>
+
+    </div><!-- /.card-content -->
+
+  </section>
+
+  <!-- 스크립트 로드 순서: gods.js(데이터) → app.js(로직) -->
+  <script src="assets/js/gods.js"></script>
+  <script src="assets/js/app.js"></script>
+
+</body>
+</html>

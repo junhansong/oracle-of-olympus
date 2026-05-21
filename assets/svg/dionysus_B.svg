@@ -1,0 +1,98 @@
+<!-- 디오니소스 — 플랫 아이콘 스타일 -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <!-- 배경 원 -->
+  <circle cx="60" cy="60" r="55" fill="#9944cc"/>
+  <!-- 배경 어두운 원 -->
+  <circle cx="60" cy="60" r="50" fill="#0f0520"/>
+
+  <!-- 머리카락 (풍성하고 흘러내리는) -->
+  <path d="M36,56 Q28,72 32,90 Q42,104 60,106 Q78,104 88,90 Q92,72 84,56"
+    fill="#551188"/>
+
+  <!-- 포도 덩굴 화관 -->
+  <!-- 화관 덩굴 줄기 -->
+  <path d="M32,52 Q40,42 60,40 Q80,42 88,52" fill="none" stroke="#6622aa" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- 포도 잎들 -->
+  <path d="M36,52 Q30,46 34,40 Q36,44 40,46 Q38,42 42,40 Q40,46 38,52Z"
+    fill="#9944cc"/>
+  <path d="M48,44 Q44,36 50,32 Q50,38 54,38 Q50,36 54,32 Q56,38 52,44Z"
+    fill="#7722aa"/>
+  <path d="M60,40 Q58,32 64,28 Q62,34 66,34 Q62,32 66,28 Q68,34 62,40Z"
+    fill="#9944cc"/>
+  <path d="M72,44 Q68,36 74,32 Q72,38 76,38 Q72,36 76,32 Q78,38 74,44Z"
+    fill="#7722aa"/>
+  <path d="M84,52 Q80,44 86,38 Q84,44 88,46 Q84,42 88,38 Q90,44 86,52Z"
+    fill="#9944cc"/>
+
+  <!-- 포도송이들 (화관에) -->
+  <!-- 포도송이 왼쪽 -->
+  <circle cx="38" cy="48" r="3.5" fill="#6622aa"/>
+  <circle cx="44" cy="45" r="3.5" fill="#7733bb"/>
+  <circle cx="41" cy="52" r="3" fill="#6622aa"/>
+  <circle cx="35" cy="52" r="3" fill="#5511aa"/>
+
+  <!-- 포도송이 오른쪽 -->
+  <circle cx="82" cy="48" r="3.5" fill="#6622aa"/>
+  <circle cx="76" cy="45" r="3.5" fill="#7733bb"/>
+  <circle cx="79" cy="52" r="3" fill="#6622aa"/>
+  <circle cx="85" cy="52" r="3" fill="#5511aa"/>
+
+  <!-- 얼굴 타원 -->
+  <ellipse cx="60" cy="67" rx="19" ry="21" fill="#d8a0d8"/>
+
+  <!-- 귀 -->
+  <ellipse cx="41" cy="68" rx="5" ry="6" fill="#bb80bb"/>
+  <ellipse cx="79" cy="68" rx="5" ry="6" fill="#bb80bb"/>
+
+  <!-- 눈썹 (가볍고 즐거운) -->
+  <path d="M49,61 Q55,57 61,59" fill="none" stroke="#440066" stroke-width="2" stroke-linecap="round"/>
+  <path d="M71,61 Q65,57 59,59" fill="none" stroke="#440066" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- 눈 (반쯤 감긴 행복한 눈) -->
+  <ellipse cx="53" cy="65" rx="4.5" ry="3.5" fill="white"/>
+  <ellipse cx="67" cy="65" rx="4.5" ry="3.5" fill="white"/>
+  <ellipse cx="53" cy="66" rx="3" ry="2.8" fill="#440066"/>
+  <ellipse cx="67" cy="66" rx="3" ry="2.8" fill="#440066"/>
+  <circle cx="54.5" cy="64.5" r="1.2" fill="white"/>
+  <circle cx="68.5" cy="64.5" r="1.2" fill="white"/>
+  <!-- 반쯤 감긴 눈꺼풀 -->
+  <path d="M49,63.5 Q53,60.5 57,63.5" fill="none" stroke="#440066" stroke-width="1.5"/>
+  <path d="M63,63.5 Q67,60.5 71,63.5" fill="none" stroke="#440066" stroke-width="1.5"/>
+
+  <!-- 코 -->
+  <path d="M60,69 Q57,74 59,76 Q61,76 63,74 Q60,72 60,69Z" fill="#bb88bb" stroke="none"/>
+
+  <!-- 입 (활짝 웃는) -->
+  <path d="M51,79 Q60,88 69,79" fill="none" stroke="#6622aa" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- 미소 윗입술 -->
+  <path d="M53,79 Q56,77 60,78 Q64,77 67,79" fill="none" stroke="#9944cc" stroke-width="1.5"/>
+
+  <!-- 볼 홍조 (취기) -->
+  <ellipse cx="44" cy="72" rx="6" ry="4" fill="#9944cc" opacity="0.45"/>
+  <ellipse cx="76" cy="72" rx="6" ry="4" fill="#9944cc" opacity="0.45"/>
+
+  <!-- 우측: 포도주 잔 실루엣 -->
+  <!-- 잔 본체 -->
+  <path d="M86,62 Q82,68 84,76 L88,76 Q90,68 86,62Z" fill="#9944cc"/>
+  <!-- 잔 다리 -->
+  <line x1="86" y1="76" x2="86" y2="90" stroke="#9944cc" stroke-width="2" stroke-linecap="round"/>
+  <!-- 잔 받침 -->
+  <rect x="81" y="89" width="10" height="3" rx="1.5" fill="#9944cc"/>
+  <!-- 잔 테두리 -->
+  <rect x="81" y="62" width="10" height="2" rx="1" fill="#bb66ee"/>
+  <!-- 포도주 (잔 안) -->
+  <path d="M82,64 Q82,70 84,74 L88,74 Q90,70 90,64Z" fill="#6622aa"/>
+
+  <!-- 하단: 포도송이 심볼 (우측 하단) -->
+  <circle cx="74" cy="94" r="3.5" fill="#9944cc"/>
+  <circle cx="80" cy="92" r="3.5" fill="#7733bb"/>
+  <circle cx="77" cy="98" r="3.5" fill="#9944cc"/>
+  <circle cx="83" cy="98" r="3" fill="#6622aa"/>
+  <circle cx="74" cy="100" r="3" fill="#7733bb"/>
+  <circle cx="80" cy="104" r="3" fill="#9944cc"/>
+  <!-- 포도 꼭지 -->
+  <line x1="78" y1="88" x2="78" y2="92" stroke="#6622aa" stroke-width="1.5"/>
+  <!-- 포도 잎 -->
+  <path d="M78,88 Q74,84 76,80 Q78,84 82,82 Q80,86 78,88Z" fill="#7733bb"/>
+</svg>

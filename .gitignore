@@ -1,0 +1,36 @@
+# macOS 시스템 파일
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows 시스템 파일
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# 의존성 (순수 HTML/CSS/JS 프로젝트이므로 node_modules 없음)
+node_modules/
+
+# 환경 설정
+.env
+.env.local
+
+# 빌드 산출물 (현재 없음)
+dist/
+build/
+
+# 시안용 파일 (Style A/C SVG, PNG 썸네일)
+assets/svg/*_A.svg
+assets/svg/*_B.png
+assets/svg/*_A.png
+assets/svg/*_C.svg
+assets/svg/*_C.png
+
+# 미리보기용 임시 파일
+svg_preview.html

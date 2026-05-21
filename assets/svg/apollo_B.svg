@@ -1,0 +1,86 @@
+<!-- 아폴론 — 플랫 아이콘 스타일 -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <!-- 배경 원 -->
+  <circle cx="60" cy="60" r="55" fill="#ffaa00"/>
+  <!-- 배경 어두운 원 -->
+  <circle cx="60" cy="60" r="50" fill="#1a0a00"/>
+
+  <!-- 머리카락 (풍성한 청년 머리) -->
+  <path d="M38,55 Q30,70 34,88 Q44,100 60,102 Q76,100 86,88 Q90,70 82,55"
+    fill="#cc8800"/>
+
+  <!-- 월계관 -->
+  <!-- 화관 띠 -->
+  <path d="M34,54 Q60,46 86,54" fill="none" stroke="#cc8800" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- 월계 잎들 (좌측) -->
+  <ellipse cx="36" cy="48" rx="5" ry="3" fill="#ffaa00" transform="rotate(-30,36,48)"/>
+  <ellipse cx="42" cy="42" rx="5" ry="3" fill="#dd9900" transform="rotate(-15,42,42)"/>
+  <ellipse cx="50" cy="38" rx="5" ry="3" fill="#ffaa00" transform="rotate(-5,50,38)"/>
+
+  <!-- 월계 잎들 (우측) -->
+  <ellipse cx="84" cy="48" rx="5" ry="3" fill="#ffaa00" transform="rotate(30,84,48)"/>
+  <ellipse cx="78" cy="42" rx="5" ry="3" fill="#dd9900" transform="rotate(15,78,42)"/>
+  <ellipse cx="70" cy="38" rx="5" ry="3" fill="#ffaa00" transform="rotate(5,70,38)"/>
+
+  <!-- 중앙 월계 장식 -->
+  <ellipse cx="60" cy="35" rx="6" ry="3.5" fill="#ffaa00"/>
+  <circle cx="60" cy="34" r="2" fill="#ffe060"/>
+
+  <!-- 얼굴 타원 (잘생긴 청년) -->
+  <ellipse cx="60" cy="66" rx="19" ry="21" fill="#ffe8a0"/>
+
+  <!-- 귀 -->
+  <ellipse cx="41" cy="67" rx="5" ry="6" fill="#ffd470"/>
+  <ellipse cx="79" cy="67" rx="5" ry="6" fill="#ffd470"/>
+
+  <!-- 눈썹 (매끄럽고 청년답게) -->
+  <path d="M49,59 Q55,55 61,57" fill="none" stroke="#775500" stroke-width="2" stroke-linecap="round"/>
+  <path d="M71,59 Q65,55 59,57" fill="none" stroke="#775500" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- 눈 (미소 띤 밝은 눈) -->
+  <ellipse cx="53" cy="64" rx="4.5" ry="3.5" fill="white"/>
+  <ellipse cx="67" cy="64" rx="4.5" ry="3.5" fill="white"/>
+  <ellipse cx="53" cy="65" rx="3" ry="2.8" fill="#774400"/>
+  <ellipse cx="67" cy="65" rx="3" ry="2.8" fill="#774400"/>
+  <circle cx="54.5" cy="63.5" r="1.2" fill="white"/>
+  <circle cx="68.5" cy="63.5" r="1.2" fill="white"/>
+
+  <!-- 코 -->
+  <path d="M60,68 Q57,73 59,75 Q61,75 63,73 Q60,71 60,68Z" fill="#f0c870" stroke="none"/>
+
+  <!-- 입 (환한 미소) -->
+  <path d="M52,78 Q60,86 68,78" fill="none" stroke="#885500" stroke-width="2.2" stroke-linecap="round"/>
+  <!-- 보조개 -->
+  <circle cx="50" cy="77" r="1.2" fill="#e8b860"/>
+  <circle cx="70" cy="77" r="1.2" fill="#e8b860"/>
+
+  <!-- 볼 홍조 -->
+  <ellipse cx="45" cy="71" rx="5" ry="3.5" fill="#ffaa00" opacity="0.35"/>
+  <ellipse cx="75" cy="71" rx="5" ry="3.5" fill="#ffaa00" opacity="0.35"/>
+
+  <!-- 좌측 리라 실루엣 -->
+  <!-- 리라 본체 -->
+  <path d="M24,60 Q20,72 24,82 Q28,90 36,90 Q44,90 48,82 Q52,72 48,60 Z"
+    fill="none" stroke="#ffaa00" stroke-width="2"/>
+  <!-- 리라 줄들 -->
+  <line x1="28" y1="62" x2="28" y2="88" stroke="#ffaa00" stroke-width="1.2"/>
+  <line x1="32" y1="60" x2="32" y2="90" stroke="#ffaa00" stroke-width="1.2"/>
+  <line x1="36" y1="59" x2="36" y2="90" stroke="#ffaa00" stroke-width="1.2"/>
+  <line x1="40" y1="60" x2="40" y2="90" stroke="#ffaa00" stroke-width="1.2"/>
+  <line x1="44" y1="62" x2="44" y2="88" stroke="#ffaa00" stroke-width="1.2"/>
+  <!-- 리라 가로대 -->
+  <line x1="24" y1="70" x2="48" y2="70" stroke="#cc8800" stroke-width="2"/>
+
+  <!-- 하단 우측: 태양 광선 심볼 -->
+  <circle cx="82" cy="94" r="6" fill="#ffaa00"/>
+  <!-- 태양 광선 -->
+  <line x1="82" y1="84" x2="82" y2="88" stroke="#ffaa00" stroke-width="2" stroke-linecap="round"/>
+  <line x1="82" y1="100" x2="82" y2="104" stroke="#ffaa00" stroke-width="2" stroke-linecap="round"/>
+  <line x1="72" y1="94" x2="76" y2="94" stroke="#ffaa00" stroke-width="2" stroke-linecap="round"/>
+  <line x1="88" y1="94" x2="92" y2="94" stroke="#ffaa00" stroke-width="2" stroke-linecap="round"/>
+  <line x1="74.9" y1="86.9" x2="77.8" y2="89.8" stroke="#ffaa00" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="86.2" y1="98.2" x2="89.1" y2="101.1" stroke="#ffaa00" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="74.9" y1="101.1" x2="77.8" y2="98.2" stroke="#ffaa00" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="86.2" y1="89.8" x2="89.1" y2="86.9" stroke="#ffaa00" stroke-width="1.5" stroke-linecap="round"/>
+</svg>
