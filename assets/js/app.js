@@ -187,9 +187,11 @@ function fitCardScene() {
   const btnH     = btnGroup.getBoundingClientRect().height;
   const screenH  = sc.getBoundingClientRect().height || window.innerHeight;
 
-  // 가용 높이 = 전체 - 헤더 - 버튼 - 상하 패딩(24px 여유)
-  const available = screenH - headerH - btnH - 24;
-  const clamped   = Math.min(Math.max(available, 200), 500); // 200~500px 범위 제한
+  // 가용 높이 = 전체 - 헤더 - 버튼 - 패딩(16px)
+  // card-content가 justify-content:center이므로 씬이 중앙에 배치됨
+  // 씬 높이 = 가용 공간 전체를 사용 (최소 200px, 최대 제한 없음)
+  const available = screenH - headerH - btnH - 16;
+  const clamped   = Math.max(available, 200);
 
   scene.style.height = clamped + 'px';
 }
