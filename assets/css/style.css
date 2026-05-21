@@ -575,8 +575,9 @@ canvas {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 32px 20px 48px;
+  /* center 대신 flex-start — 카드가 버튼을 덮지 않도록 위에서부터 배치 */
+  justify-content: flex-start;
+  padding: 24px 20px 32px;
   gap: 0;
 }
 
