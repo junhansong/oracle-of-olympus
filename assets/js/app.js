@@ -163,6 +163,35 @@ function showScreen(screenId) {
   AppState.currentScreen = screenId;
   // URL 해시 업데이트
   history.replaceState(null, '', `#${screenId}`);
+
+  // 카드 화면 진입 시 카드 씬 높이를 실제 가용 공간으로 동적 계산
+  if (screenId === 'card') {
+    // requestAnimationFrame: 화면이 실제로 렌더링된 후 측정
+    requestAnimationFrame(() => fitCardScene());
+  }
+}
+
+/**
+ * card-scene 높이를 실제 가용 공간 기준으로 동적 조정
+ * iOS Safari 주소창/홈바 등으로 인한 dvh 오차를 JS로 보정
+ */
+function fitCardScene() {
+  const sc       = document.getElementById('screen-card');
+  const header   = sc?.querySelector('.app-header');
+  const btnGroup = sc?.querySelector('.btn-group-card');
+  const scene    = sc?.querySelector('.card-scene');
+  if (!sc || !header || !btnGroup || !scene) return;
+
+  // 실제 렌더링된 높이 측정
+  const headerH  = header.getBoundingClientRect().height;
+  const btnH     = btnGroup.getBoundingClientRect().height;
+  const screenH  = sc.getBoundingClientRect().height || window.innerHeight;
+
+  // 가용 높이 = 전체 - 헤더 - 버튼 - 상하 패딩(24px 여유)
+  const available = screenH - headerH - btnH - 24;
+  const clamped   = Math.min(Math.max(available, 200), 500); // 200~500px 범위 제한
+
+  scene.style.height = clamped + 'px';
 }
 
 /** URL 해시 기반 초기 화면 결정 */
@@ -174,6 +203,11 @@ function initRouting() {
     showScreen('intro');
   }
 }
+
+// 화면 크기 변경(회전 등) 시 카드 씬 높이 재계산
+window.addEventListener('resize', () => {
+  if (AppState.currentScreen === 'card') fitCardScene();
+});
 
 /* ══════════════════════════════════════════════════════════════
    6. 신 목록 화면 렌더링

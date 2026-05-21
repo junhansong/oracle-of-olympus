@@ -589,8 +589,7 @@ canvas {
 .card-scene {
   perspective: 1200px;
   width: min(300px, 82vw);
-  /* 높이: 뷰포트에서 헤더(77px) + 버튼영역(118px) + 상하패딩(44px) 제외
-     = 100dvh - 239px. 최대 450px 제한 (태블릿/데스크탑 과도하게 크지 않도록) */
+  /* 초기 fallback 높이 — JS fitCardScene()이 실제 가용 높이로 덮어씀 */
   height: min(450px, calc(100dvh - 239px));
   flex-shrink: 0;
   position: relative;
@@ -1024,7 +1023,7 @@ canvas {
     padding: 24px 20px 40px;
   }
 
-  /* card-scene은 flex:1로 가용 높이를 동적으로 사용 — 고정값 오버라이드 불필요 */
+  /* card-scene 높이는 JS fitCardScene()이 동적 계산 — CSS 오버라이드 없음 */
 }
 
 /* 매우 작은 화면 (680px 높이 이하 — iPhone SE 등) */
