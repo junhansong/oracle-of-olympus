@@ -305,6 +305,10 @@ function openOracleCard(godId) {
   // 카드 플립 상태 초기화 (CSS는 .flipped 클래스 사용)
   DOM.oracleCard?.classList.remove('flipped');
 
+  // iOS Safari 대비: 앞면 숨김 클래스 제거 (새 카드 진입 시 앞면 복원)
+  const cardFront = document.querySelector('.card-front');
+  if (cardFront) cardFront.classList.remove('front-hidden');
+
   // 피드백 버튼 초기화
   resetFeedbackButtons();
 
@@ -333,7 +337,13 @@ function handleCardFlip() {
   // CSS: .card.flipped → transform: rotateY(180deg)
   DOM.oracleCard?.classList.add('flipped');
   DOM.oracleCard?.setAttribute('aria-label', '카드가 뒤집혔습니다. 신탁을 확인하세요.');
-  // CSS: .card.flipped .fortune-msg → opacity: 1 (자동 처리됨)
+
+  // iOS Safari 대비: 플립 애니메이션(0.95s) 완료 후 앞면 완전 숨김
+  // backface-visibility가 무시되는 경우에도 앞면이 비쳐보이지 않도록 처리
+  const cardFront = document.querySelector('.card-front');
+  setTimeout(() => {
+    if (cardFront) cardFront.classList.add('front-hidden');
+  }, 980); // 플립 0.95s + 여유 30ms
 }
 
 /* ══════════════════════════════════════════════════════════════

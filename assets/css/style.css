@@ -607,6 +607,7 @@ canvas {
   height: 100%;
   position: relative;
   transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;   /* iOS Safari 필수 */
   transition: transform 0.95s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
 }
@@ -614,6 +615,7 @@ canvas {
 /* 플립 상태 */
 .card.flipped {
   transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);     /* iOS Safari 필수 */
 }
 
 /* 카드 면 공통 스타일 */
@@ -622,9 +624,16 @@ canvas {
   inset: 0;
   border-radius: var(--card-radius);
   backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;    /* iOS Safari 필수 */
   overflow: hidden;
   border: 1px solid var(--border-main);
+}
+
+/* 플립 완료 후 앞면 — iOS Safari에서 backface-visibility가 무시될 경우를 대비
+   JS가 플립 완료 시 .front-hidden 클래스를 추가해 완전 숨김 처리 */
+.card-front.front-hidden {
+  visibility: hidden;
+  pointer-events: none;
 }
 
 /* =====================================================
