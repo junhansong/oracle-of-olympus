@@ -566,39 +566,36 @@ canvas {
    화면 3 — 운세 카드
    ===================================================== */
 #screen-card {
-  /* flex column: 헤더 / 카드콘텐츠(flex:1) / 버튼 순으로 쌓임 */
+  /* screen-card = 뷰포트 100% 고정 높이로 잠금 — 버튼이 항상 하단에 고정 */
   flex-direction: column;
+  height: 100dvh;
+  max-height: 100dvh;
   overflow: hidden;
 }
 
-/* 카드 콘텐츠 영역 — 버튼을 제외한 나머지 공간 차지 */
+/* 카드 콘텐츠 영역 — 헤더와 버튼 사이 남은 공간을 모두 차지 */
 .card-content {
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* 앞/뒷면 모두 동일한 위치에 고정: 상단 정렬 + 패딩으로 위치 결정 */
   justify-content: flex-start;
-  padding: 20px 20px 8px;
-  gap: 0;
-  min-height: 0;
-  /* visible: 뒷면 콘텐츠가 card-scene 높이를 초과해도 잘리지 않도록 */
-  overflow: visible;
+  padding: 16px 20px 8px;
+  min-height: 0;           /* flex child가 줄어들 수 있도록 */
+  overflow: hidden;        /* 카드가 버튼 영역으로 넘치지 않도록 */
 }
 
 /* 카드 3D 씬 — perspective 설정 */
 .card-scene {
   perspective: 1200px;
   width: min(300px, 82vw);
-  /* 뷰포트 높이 기반 최대 높이 — 헤더(70px)+버튼(130px)+여백 제외 */
-  /* 뒷면 콘텐츠(~320px)가 충분히 들어올 수 있도록 여유 높이 확보 */
-  height: min(440px, calc(82vw * 1.6), calc(100dvh - 230px));
-  margin-bottom: 0;
+  /* 높이: 뷰포트에서 헤더(77px) + 버튼영역(118px) + 상하패딩(44px) 제외
+     = 100dvh - 239px. 최대 450px 제한 (태블릿/데스크탑 과도하게 크지 않도록) */
+  height: min(450px, calc(100dvh - 239px));
+  flex-shrink: 0;
   position: relative;
   z-index: 0;
-  flex-shrink: 0;
-  /* 뒷면이 씬 높이를 초과할 경우 잘리지 않도록 */
-  overflow: visible;
+  overflow: hidden;
 }
 
 /* 카드 본체 — 3D 변환 */
@@ -755,11 +752,14 @@ canvas {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* 상단 정렬: 앞면과 동일한 시작 위치에서 콘텐츠 표시 */
   justify-content: flex-start;
-  padding: 20px 20px;
-  gap: 8px;
+  /* position:absolute + inset:0 으로 크기는 card-face가 결정 (height:100% 불필요) */
+  padding: 16px 16px 12px;
+  gap: 6px;
   position: relative;
+  /* 내용이 카드 높이를 초과하면 카드 안에서 스크롤 — iOS touch 스크롤 포함 */
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* 뒷면 내부 테두리 */
@@ -1024,22 +1024,37 @@ canvas {
     padding: 24px 20px 40px;
   }
 
-  /* 소형 모바일 — 뒷면 콘텐츠(~320px)가 들어올 수 있도록 충분한 높이 확보 */
-  .card-scene {
-    height: min(380px, calc(82vw * 1.4), calc(100dvh - 230px));
-  }
+  /* card-scene은 flex:1로 가용 높이를 동적으로 사용 — 고정값 오버라이드 불필요 */
 }
 
-/* 매우 작은 화면 (667px 높이 iPhone SE 등) */
+/* 매우 작은 화면 (680px 높이 이하 — iPhone SE 등) */
 @media (max-height: 680px) {
-  .card-scene {
-    /* 버튼(4개 2열) + 여백을 제외하고 최대한 할당 */
-    height: calc(100dvh - 210px);
+  /* card-content 패딩 최소화해서 카드에 더 많은 공간 확보 */
+  .card-content {
+    padding: 8px 16px 4px;
   }
 
-  /* 카드 내부 여백 최소화 */
+  /* 카드 씬 높이: 헤더(77)+버튼(96)+패딩(24) = 197px 제외 */
+  .card-scene {
+    height: min(350px, calc(100dvh - 197px));
+  }
+
+  /* card-back 패딩 최소화 */
   .card-back {
-    padding: 8px !important;
+    padding: 8px 12px 8px !important;
+    gap: 4px !important;
+  }
+
+  /* SVG 아이콘 크기 축소 */
+  .god-emoji svg {
+    width: 60px !important;
+    height: 60px !important;
+  }
+
+  /* 운세 문구 폰트 소형화 */
+  .fortune-msg {
+    font-size: 0.78rem !important;
+    line-height: 1.6 !important;
   }
 
   /* 버튼 더 작게 */
